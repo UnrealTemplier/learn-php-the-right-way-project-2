@@ -1,10 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Models\Transactions;
 use App\View;
+use Exception;
 
 class HomeController
 {
@@ -13,8 +15,11 @@ class HomeController
         return View::make('index');
     }
 
+    /**
+     * @throws Exception
+     */
     public function upload(): void
     {
-        dd($_FILES);
+        new Transactions()->store($_FILES['csv_files']);
     }
 }

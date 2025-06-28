@@ -10,14 +10,14 @@
     <body>
         <form method="post" action="/upload" enctype="multipart/form-data">
 
-          <label for="transactions-file-1">Transactions CSV file (#1): </label>
-          <input type="file" id="transactions-file-1" name="transactions-file-1">
+          <label for="file-1">Transactions CSV file (#1): </label>
+          <input type="file" id="file-1" name="csv_files[]">
 
           <br/>
           <br/>
 
-          <label for="transactions-file-2">Transactions CSV file (#2): </label>
-          <input type="file" id="transactions-file-2" name="transactions-file-2">
+          <label for="file-2">Transactions CSV file (#2): </label>
+          <input type="file" id="file-2" name="csv_files[]">
 
           <br/>
           <br/>
