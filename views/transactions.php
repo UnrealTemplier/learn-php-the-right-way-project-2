@@ -1,6 +1,5 @@
-<?php global $transactions; ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Transactions</title>
     <style>
@@ -40,22 +39,22 @@
         <td><?= $transaction['date'] ?></td>
         <td><?= $transaction['check_number'] ?></td>
         <td><?= $transaction['description'] ?></td>
-        <td><?= $transaction['amount'] ?></td>
+        <td style="color: <?= $transaction['color'] ?>"><?= $transaction['amount'] ?></td>
     </tr>
     <?php endforeach; ?>
     </tbody>
     <tfoot>
     <tr>
         <th colspan="3">Total Income:</th>
-        <td><!-- TODO --></td>
+        <td><?= $this->income ?></td>
     </tr>
     <tr>
         <th colspan="3">Total Expense:</th>
-        <td><!-- TODO --></td>
+        <td><?= $this->expense ?></td>
     </tr>
     <tr>
         <th colspan="3">Net Total:</th>
-        <td><!-- TODO --></td>
+        <td><?= $this->net ?></td>
     </tr>
     </tfoot>
 </table>
