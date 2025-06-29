@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\App;
 use App\Config;
 use App\Controllers\HomeController;
+use App\Controllers\TransactionsController;
 use App\Router;
 use Dotenv\Dotenv;
 
@@ -21,7 +22,8 @@ $router = new Router();
 
 $router
     ->get('/', [HomeController::class, 'index'])
-    ->post('/upload', [HomeController::class, 'upload']);
+    ->post('/upload', [HomeController::class, 'upload'])
+    ->get('/transactions', [TransactionsController::class, 'index']);
 
 new App(
     $router,

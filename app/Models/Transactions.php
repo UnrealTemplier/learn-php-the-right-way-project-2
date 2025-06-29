@@ -46,4 +46,15 @@ class Transactions extends Model
             fclose($file);
         }
     }
+
+    public function getAll(): array
+    {
+        $stmt = $this->db->prepare(
+            'SELECT date, check_number, description, amount
+             FROM transactions',
+        );
+
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
